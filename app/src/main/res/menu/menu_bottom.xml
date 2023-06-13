@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@drawable/baseline_home"
+        android:title="@string/text_label_2"/>
+    <item
+        android:id="@+id/action_add"
+        android:enabled="true"
+        android:icon="@drawable/baseline_add"
+        android:title="@string/text_label_1"/>
+    <item
+        android:id="@+id/action_list"
+        android:enabled="true"
+        android:icon="@drawable/baseline_list"
+        android:title="@string/text_label_3"/>
+</menu>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "68337163833",
+    "project_id": "ejercicioparaexamenfinal",
+    "storage_bucket": "ejercicioparaexamenfinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68337163833:android:e7e248de058a2a895277e8",
+        "android_client_info": {
+          "package_name": "com.example.ejercicioparaexamenfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "68337163833-960l39d1v55ferh6pt1i883osgl035th.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpk4EtDhcFS0Q5eF_mS4icIIJ8dt6Rbas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "68337163833-960l39d1v55ferh6pt1i883osgl035th.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
