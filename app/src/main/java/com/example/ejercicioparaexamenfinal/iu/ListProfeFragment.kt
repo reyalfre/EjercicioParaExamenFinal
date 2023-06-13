@@ -11,6 +11,7 @@ import com.example.ejercicioparaexamenfinal.Profesor
 import com.example.ejercicioparaexamenfinal.ProfesorAdapter
 import com.example.ejercicioparaexamenfinal.databinding.FragmentListProfeBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
 
 
 class ListProfeFragment : Fragment() {
@@ -38,13 +39,30 @@ class ListProfeFragment : Fragment() {
             configRecycler()
         }
         binding.imageView2.setOnClickListener {
+          //  var profesor = Profesor(name = binding.editTextProfesor.text.toString().trim())
             mostrarFiltOne()
             configRecycler()
         }
     }
 
     private fun mostrarFiltOne() {
-        TODO("Not yet implemented")
+        val mFirebaseFirestore = FirebaseFirestore.getInstance()
+
+        val nombrecito: String = binding.editTextProfesor.text.toString().trim()
+        mFirebaseFirestore.collection("profesor")
+            .whereEqualTo("name", nombrecito)
+            .get()
+            .addOnSuccessListener {
+                for (document in it) {
+                    val profesor = document.toObject(Profesor::class.java)
+                    profesor.id = document.id
+                    mAdapter.add(profesor)
+                    Toast.makeText(requireActivity(), "Encontrado", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .addOnFailureListener {
+                Toast.makeText(requireActivity(), "Error al consultar los datos", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun configRecycler() {
@@ -64,6 +82,7 @@ class ListProfeFragment : Fragment() {
                     val profesor = document.toObject(Profesor::class.java)
                     profesor.id = document.id  //la id del producto es el id de firebase
                     mAdapter.add(profesor)
+                    Toast.makeText(requireActivity(), "Done", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener {

@@ -6,16 +6,11 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.ejercicioparaexamenfinal.databinding.ActivityMainBinding
-import com.example.ejercicioparaexamenfinal.iu.AddProfeFragment
-import com.example.ejercicioparaexamenfinal.iu.HomeFragment
-import com.example.ejercicioparaexamenfinal.iu.ListProfeFragment
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
