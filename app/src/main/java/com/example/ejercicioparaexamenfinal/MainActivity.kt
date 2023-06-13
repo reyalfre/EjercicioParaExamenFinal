@@ -1,6 +1,8 @@
 package com.example.ejercicioparaexamenfinal
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -53,6 +55,29 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_sign_out ->{
+                AuthUI.getInstance().signOut(this) //salir de la session
+                    .addOnSuccessListener {
+                        Toast.makeText(this, "Session cerrada", Toast.LENGTH_SHORT).show()
+                    }
+                //otra forma de comprobar si ha salido de forma correcta
+                /*  .addOnCompleteListener {
+                      if(it.isSuccessful){
+                          binding.textInit.visibility = View.GONE
+                      }else {
+                          Toast.makeText(this, "no se puede cerrar la session", Toast.LENGTH_SHORT).show()
+                      }
+                  }*/
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
